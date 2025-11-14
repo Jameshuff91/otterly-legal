@@ -155,14 +155,14 @@
             width: 100%;
         }
 
-        /* Hero Section - Two column with form */
+        /* Hero Section - Three column with otters in middle */
         .hero {
             padding: 6rem 4rem;
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 3rem;
             align-items: center;
             min-height: 80vh;
         }
@@ -199,15 +199,61 @@
             to { background-position: 200% center; }
         }
 
+        .hero-content p {
+            font-size: var(--text-subhero);
+            font-style: italic;
+            opacity: 0.9;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .hero h1 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 200;
+            font-size: var(--text-hero);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            animation: glowPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { text-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+            50% { text-shadow: 0 0 40px rgba(255, 107, 157, 0.4), 0 0 60px rgba(0, 212, 255, 0.2); }
+        }
+
+        .highlight {
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--coral-glow), var(--bioluminescent), var(--coral-glow));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+
+        /* Otters in the center */
+        .otter-visual {
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.5s backwards;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Form container on the right */
         .hero-form-container {
-            animation: fadeInLeft 1s ease-out 0.3s backwards;
+            animation: fadeInRight 1s ease-out 0.3s backwards;
         }
 
         .hero-form-container h2 {
             font-family: 'Bricolage Grotesque', sans-serif;
             font-weight: 800;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
             background: linear-gradient(90deg, var(--coral-glow), var(--bioluminescent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -215,25 +261,20 @@
         }
 
         .hero-form-container p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.9;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             line-height: 1.6;
-        }
-
-        /* Interactive Otter Animation */
-        .otter-visual {
-            position: relative;
-            animation: fadeInRight 1s ease-out 0.5s backwards;
         }
 
         .otter-container {
             position: relative;
-            width: 100%;
-            height: 400px;
+            width: 200px;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
 
         .otter-pair {
@@ -251,7 +292,7 @@
         }
 
         .otter {
-            font-size: 100px;
+            font-size: 80px;
             filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
             animation: otterBob 3s ease-in-out infinite;
             position: relative;
@@ -275,7 +316,7 @@
 
         .hand-heart {
             position: absolute;
-            font-size: 35px;
+            font-size: 30px;
             left: 50%;
             top: 50%;
             transform: translateX(-50%) translateY(-50%);
@@ -297,10 +338,10 @@
 
         .water-ripple {
             position: absolute;
-            width: 300px;
-            height: 80px;
+            width: 200px;
+            height: 60px;
             left: 50%;
-            bottom: 20%;
+            bottom: 10%;
             transform: translateX(-50%);
             background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
             border-radius: 50%;
@@ -564,20 +605,36 @@
 
             .hero {
                 grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
                 padding: 3rem 2rem;
                 text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-content {
+                order: 1;
+            }
+
+            .otter-visual {
+                order: 2;
+                align-self: center;
+            }
+
+            .hero-form-container {
+                order: 3;
             }
 
             .otter-container {
-                height: 300px;
+                width: 100%;
+                height: 200px;
             }
 
             .otter {
-                font-size: 80px;
+                font-size: 60px;
             }
 
             .hand-heart {
-                font-size: 30px;
+                font-size: 25px;
             }
 
             .signup-form {
@@ -618,14 +675,38 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Form and Otters -->
+    <!-- Hero Section with Text, Otters, and Form -->
     <section class="hero" id="waitlist">
-        <!-- Left: Signup Form -->
+        <!-- Left: Hero Text -->
+        <div class="hero-content">
+            <h1>
+                <span class="highlight">Hold Hands</span><br>
+                Through Life's<br>
+                Adventures
+            </h1>
+            <p>
+                Like otters drifting together in the vast ocean,<br>
+                find your perfect match for every moment
+            </p>
+        </div>
+
+        <!-- Center: Otters floating between -->
+        <div class="otter-visual">
+            <div class="otter-container">
+                <div class="otter-pair">
+                    <div class="otter">🦦</div>
+                    <div class="hand-heart">💕</div>
+                    <div class="otter">🦦</div>
+                </div>
+                <div class="water-ripple"></div>
+            </div>
+        </div>
+
+        <!-- Right: Signup Form -->
         <div class="hero-form-container">
             <h2>Join the Adventure</h2>
             <p>
-                Be among the first couples to experience Otterly.<br>
-                Sign up for early access!
+                Be among the first couples to experience Otterly.
             </p>
 
             <form class="signup-form" id="waitlistForm" action="https://formspree.io/f/xeorpaza" method="POST">
@@ -655,18 +736,6 @@
 
             <div id="formMessage" class="form-message" style="display: none;"></div>
             </form>
-        </div>
-
-        <!-- Right: Otters -->
-        <div class="otter-visual">
-            <div class="otter-container">
-                <div class="otter-pair">
-                    <div class="otter">🦦</div>
-                    <div class="hand-heart">💕</div>
-                    <div class="otter">🦦</div>
-                </div>
-                <div class="water-ripple"></div>
-            </div>
         </div>
     </section>
 
