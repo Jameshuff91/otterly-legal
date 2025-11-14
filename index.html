@@ -155,20 +155,16 @@
             width: 100%;
         }
 
-        /* Hero Section */
+        /* Hero Section - Centered layout */
         .hero {
-            padding: 6rem 4rem;
-            max-width: 1400px;
+            padding: 4rem 4rem 2rem;
+            max-width: 900px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            min-height: 80vh;
+            text-align: center;
         }
 
         .hero-content {
-            animation: fadeInLeft 1s ease-out 0.3s backwards;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
         }
 
         .hero h1 {
@@ -203,7 +199,7 @@
             font-size: var(--text-subhero);
             font-style: italic;
             opacity: 0.9;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             line-height: 1.6;
             font-weight: 300;
         }
@@ -217,10 +213,11 @@
         .otter-container {
             position: relative;
             width: 100%;
-            height: 500px;
+            height: 350px;
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 2rem 0;
         }
 
         .otter-pair {
@@ -373,7 +370,7 @@
 
         /* Waitlist Section */
         .waitlist {
-            padding: 6rem 4rem;
+            padding: 2rem 4rem 6rem;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -381,7 +378,7 @@
         .waitlist h2 {
             font-family: 'Bricolage Grotesque', sans-serif;
             font-weight: 800;
-            font-size: 3rem;
+            font-size: 2.5rem;
             text-align: center;
             margin-bottom: 1rem;
             background: linear-gradient(90deg, var(--coral-glow), var(--bioluminescent));
@@ -392,8 +389,8 @@
 
         .waitlist-intro {
             text-align: center;
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
             line-height: 1.6;
         }
@@ -577,13 +574,12 @@
             }
 
             .hero {
-                grid-template-columns: 1fr;
-                padding: 3rem 2rem;
-                text-align: center;
+                padding: 2rem 2rem 1rem;
             }
 
             .otter-container {
-                height: 300px;
+                height: 250px;
+                margin: 1rem 0;
             }
 
             .otter {
@@ -592,6 +588,10 @@
 
             .hand-heart {
                 font-size: 30px;
+            }
+
+            .waitlist {
+                padding: 1rem 2rem 4rem;
             }
 
             .signup-form {
@@ -632,8 +632,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section with Otters and Form -->
+    <section class="hero" id="waitlist">
         <div class="hero-content">
             <h1>
                 <span class="highlight">Hold Hands</span><br>
@@ -658,30 +658,8 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h2>Drift Together</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🌊</div>
-                <h3>Smart Matching</h3>
-                <p>Both partners swipe on activities. When you both swipe right, it's a match! Discover what you both love without the guesswork.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🦦</div>
-                <h3>Stay Connected</h3>
-                <p>Never drift apart. Share experiences, create memories, and strengthen your bond through thoughtfully matched adventures.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">✨</div>
-                <h3>Grow Together</h3>
-                <p>Discover new experiences that help you both grow, from cozy nights in to exciting adventures out in the world.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Waitlist Section -->
-    <section class="waitlist" id="waitlist">
+    <!-- Waitlist Form Section -->
+    <section class="waitlist">
         <h2>Join the Adventure</h2>
         <p class="waitlist-intro">
             Be among the first couples to experience Otterly.<br>
@@ -715,6 +693,28 @@
 
             <div id="formMessage" class="form-message" style="display: none;"></div>
         </form>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Why Otterly?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌊</div>
+                <h3>Smart Matching</h3>
+                <p>Both partners swipe on activities. When you both swipe right, it's a match! Discover what you both love without the guesswork.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🦦</div>
+                <h3>Stay Connected</h3>
+                <p>Never drift apart. Share experiences, create memories, and strengthen your bond through thoughtfully matched adventures.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Grow Together</h3>
+                <p>Discover new experiences that help you both grow, from cozy nights in to exciting adventures out in the world.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
