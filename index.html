@@ -710,6 +710,9 @@
             </p>
 
             <form class="signup-form" id="waitlistForm" action="https://formspree.io/f/xeorpaza" method="POST">
+            <!-- Hidden field to identify project source -->
+            <input type="hidden" name="project" value="otterly">
+
             <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required placeholder="Your name">
